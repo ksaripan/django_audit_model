@@ -4,9 +4,9 @@ from django.utils import timezone
 
 
 class AuditModel(models.Model):
-    created_by = models.ForeignKey(User, related_name='create_%(class)s', editable=False)
+    created_by = models.ForeignKey(User, related_name='create_%(class)s', editable=False, on_delete=models.CASCADE)
     created_date = models.DateTimeField(editable=False)
-    modified_by = models.ForeignKey(User, related_name='modify_%(class)s', editable=False)
+    modified_by = models.ForeignKey(User, related_name='modify_%(class)s', editable=False, on_delete=models.CASCADE)
     modified_date = models.DateTimeField(editable=False)
 
     class Meta:

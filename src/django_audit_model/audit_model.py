@@ -19,9 +19,3 @@ class AuditModel(models.Model):
             self.created_date = timezone.now()
         self.modified_date = timezone.now()
         super(AuditModel, self).save(force_insert, force_update, using, update_fields)
-
-    def __str__(self):
-        return unicode(self).encode('utf-8')
-
-    def __unicode__(self):
-        return u''
